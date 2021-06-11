@@ -1,0 +1,143 @@
+
+
+.home_section{
+    padding: 70px 0;
+}
+
+.home-title{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 60px;
+}
+
+.home-subtitle{
+    background: linear-gradient(#e67864, #df3636);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-size: 12px;
+}
+
+
+
+#equipes_completes{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .home-subtitle{
+        border-top: 1px solid #2563eb ;
+    }
+    .home-icon{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+#equipes_incompletes{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .home-subtitle{
+        border-top: 1px solid #e67864 ;
+    }
+    .home-icon{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+#joueurs_disponible{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#34d399, #167e58);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .home-subtitle{
+        border-top: 1px solid #34d399 ;
+    }
+
+    .home-icon{
+        background: linear-gradient(#34d399, #167e58);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+};
+
+#joueurs_en_equipe{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .home-subtitle{
+        border-top: 1px solid #e67864 ;
+    }
+    .home-icon{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+};
+
+#equipes_europe{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .home-subtitle{
+        border-top: 1px solid #2563eb ;
+    }
+    .home-icon{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+#joueuses_5{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .home-subtitle{
+        border-top: 1px solid #e67864 ;
+    }
+    .home-icon{
+        background: linear-gradient(#e67864, #df3636);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+#joueurs_5{
+    .home-title, .home-subtitle{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .home-subtitle{
+        border-top: 1px solid #2563eb ;
+    }
+    .home-icon{
+        background: linear-gradient(#2563eb, #1447b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+

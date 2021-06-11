@@ -1,0 +1,15 @@
+//Joueur link
+
+@import './font.scss';
+@import './sections/equipe.scss';
+@import './sections/joueur.sass';
+@import './sections/home.scss';
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+nav{
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0.5px rgba(255, 0, 0, 0.644);
+}

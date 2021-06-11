@@ -1,0 +1,52 @@
+.container
+    position: relative
+    width: 1100px
+    display: flex
+    justify-content: center
+    align-content: center
+    flex-wrap: wrap
+    padding: 30px
+
+.card
+    position: relative
+    max-width: 300px
+    height: 227px
+    margin: 30px 10px
+    padding: 20px 15px
+    display: flex
+    flex-direction: column
+    box-shadow: 0 5px 10px #7c7c7c6e
+    transition: 0.5s
+    font-family: 'Bebas Neue', cursive
+
+    .img
+        position: relative
+        width: 260px
+        height: 260px
+
+        img
+            box-shadow: 0 5px 20px #4949498a
+            max-width: 100%
+            border-radius: 4%
+
+    .content
+        text-align: center
+
+        p
+            opacity: 0
+            transition: 0.3s   
+    .footer
+        opacity: 0
+        transition: 0.3s 
+        
+.card:hover
+    height: fit-content
+    margin-top: -20px
+    .footer
+        opacity: 1
+            
+.card:hover p
+    opacity: 1
+
+.paginate
+    margin: 70px 0
