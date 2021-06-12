@@ -9,7 +9,7 @@
 
         <div class="row content">
             <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
-                <img src="assets/img/features-1.png" class="img-fluid" alt="">
+                <img src="{{ asset('img/features-1.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
                 <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -27,7 +27,7 @@
 
         <div class="row content">
             <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-                <img src="assets/img/features-2.png" class="img-fluid" alt="">
+                <img src="{{ asset('img/features-2.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                 <h3>Corporis temporibus maiores provident</h3>
@@ -45,7 +45,7 @@
 
         <div class="row content">
             <div class="col-md-5" data-aos="fade-right">
-                <img src="assets/img/features-3.png" class="img-fluid" alt="">
+                <img src="{{ asset('img/features-3.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7 pt-5" data-aos="fade-left">
                 <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
@@ -60,7 +60,7 @@
 
         <div class="row content">
             <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-                <img src="assets/img/features-4.png" class="img-fluid" alt="">
+                <img src="{{ asset('img/features-4.png') }}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                 <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
