@@ -14,8 +14,8 @@ class ChiffreController extends Controller
      */
     public function index()
     {
-        $chiffre = Chiffre::all();
-        return view("backoffice.chiffre.all", compact("chiffres"));
+        $chiffres = Chiffre::all();
+        return view("backoffice.counts.all", compact("chiffres"));
     }
 
     /**
@@ -25,7 +25,8 @@ class ChiffreController extends Controller
      */
     public function create()
     {
-        return view("backoffice.chiffre.create");
+        $this->authorize("chiffre-create", Chiffre::class);
+        return view("backoffice.counts.create");
     }
 
     /**
@@ -36,13 +37,14 @@ class ChiffreController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create", Chiffre::class);
         $chiffre = new Chiffre();
         $chiffre->figure = $request->figure;
         $chiffre->text = $request->text;
         $chiffre->save();
 
         return redirect()->route("chiffre.index")->with("successMessage", "Votre chiffre à bien été ajouté");
-
+        
     }
 
     /**
@@ -53,7 +55,7 @@ class ChiffreController extends Controller
      */
     public function show(Chiffre $chiffre)
     {
-        return view("backoffice.chiffre.show", compact("chiffre"));
+        return view("backoffice.counts.show", compact("chiffre"));
     }
 
     /**
@@ -64,7 +66,8 @@ class ChiffreController extends Controller
      */
     public function edit(Chiffre $chiffre)
     {
-        return view("backoffice.chiffre.edit", compact("chiffre"));
+        $this->authorize("chiffre-edit", $chiffre);
+        return view("backoffice.counts.edit", compact("chiffre"));
 
     }
 
@@ -77,6 +80,7 @@ class ChiffreController extends Controller
      */
     public function update(Request $request, Chiffre $chiffre)
     {
+        $this->authorize("update", $chiffre);
         $chiffre->figure = $request->figure;
         $chiffre->text = $request->text;
 
@@ -92,7 +96,8 @@ class ChiffreController extends Controller
      */
     public function destroy(Chiffre $chiffre)
     {
-       $chiffre->delete();
-       return redirect()->back()->with("successMessage", "Votre chiffre à bien été suprimmé");
+        $this->authorize("update", $chiffre);
+        $chiffre->delete();
+        return redirect()->back()->with("successMessage", "Votre chiffre à bien été suprimmé");
     }
 }

@@ -25,38 +25,38 @@
         <link href="css/style.css" rel="stylesheet">
 
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-
+            
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
-
+            
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
-
-
-          <!-- Vendor JS Files -->
-  <script src="vendor/aos/aos.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-  <script src="vendor/purecounter/purecounter.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
-
+        
+        
+        <!-- Vendor JS Files -->
+        <script src="vendor/aos/aos.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="vendor/php-email-form/validate.js"></script>
+        <script src="vendor/purecounter/purecounter.js"></script>
+        <script src="vendor/swiper/swiper-bundle.min.js"></script>
+        
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- Template Main JS File -->
+        <script src="js/main.js"></script>
+        
     </body>
 </html>

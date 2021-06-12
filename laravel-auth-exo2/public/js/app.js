@@ -3802,6 +3802,32 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
+var selector = document.querySelector('#pictureSelector');
+var pathSelector = document.querySelector('#path_selector');
+var preview = document.querySelector('#preview_link');
+
+if (selector) {
+  selector.addEventListener('change', function (e) {
+    preview.src = URL.createObjectURL(selector.files[0]);
+  });
+}
+
+if (pathSelector) {
+  pathSelector.addEventListener('change', function (e) {
+    var shape = document.createElement('svg');
+    shape.style.height = "100px";
+    shape.style.width = "100px";
+    shape.style.fill = "blue";
+    shape.setAttribute('viewBox', '0 0 600 600');
+    shape.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    shape.innerHTML = pathSelector.value;
+    console.log(pathSelector.value);
+    console.log(shape);
+    preview.innerHTML = "";
+    preview.appendChild(shape);
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -21047,6 +21073,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/sass/main.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/main.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -21364,6 +21403,7 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/main": 0,
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
@@ -21412,8 +21452,9 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/main","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main","css/app"], () => (__webpack_require__("./resources/sass/main.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/main","css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
