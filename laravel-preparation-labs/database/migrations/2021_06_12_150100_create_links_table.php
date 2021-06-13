@@ -15,6 +15,12 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
+            $table->string("h4");
+            $table->string("li1")->nullable();
+            $table->string("li2")->nullable();
+            $table->string("li3")->nullable();
+            $table->string("li4")->nullable();
+            $table->string("li5")->nullable();
             $table->timestamps();
         });
     }
