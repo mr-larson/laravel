@@ -9,4 +9,6 @@ Langage utilisé:
                 -Laravel
                 -Bootstrap
 
+*Par défaut les noms dans les database corresponde au balise, sauf si cette dernière possède un nom dans ça classse
 ![](crud-exo-prepa.png)
+

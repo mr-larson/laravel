@@ -13,10 +13,10 @@
             </div>
             <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
                 <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                <p class="fst-italic">
+                <i>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua.
-                </p>
+                </i>
                 <ul>
                     <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                     <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
@@ -31,10 +31,10 @@
             </div>
             <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                 <h3>Corporis temporibus maiores provident</h3>
-                <p class="fst-italic">
+                <i>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua.
-                </p>
+                </i>
                 <p>
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
@@ -64,10 +64,10 @@
             </div>
             <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                 <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-                <p class="fst-italic">
+                <i>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua.
-                </p>
+                </i>
                 <p>
                     Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                     velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
