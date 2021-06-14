@@ -16,5 +16,7 @@ class Adresse extends Model
         "pays",
         "phone",
         "email",
+        "phone2",
+        "email2",
     ];
 }

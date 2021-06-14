@@ -20,6 +20,8 @@ class CreateAdressesTable extends Migration
             $table->string("pays");
             $table->string("phone");
             $table->string("email");
+            $table->string("phone2")->nullable();;
+            $table->string("email2")->nullable();;
             $table->timestamps();
         });
     }
