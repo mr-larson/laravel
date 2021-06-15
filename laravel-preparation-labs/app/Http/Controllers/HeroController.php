@@ -16,7 +16,8 @@ class HeroController extends Controller
     public function index()
     {
         $heros = Hero::all();
-        return view("backoffice.hero.all", compact("heroes"));
+        $navbar = true;
+        return view("backoffice.hero.all", compact("heroes", "navbar"));
     }
 
     /**
@@ -26,9 +27,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        $this->authorize("hero-create", Hero::class);
-    
-        return view("backoffice.hero.create");
+        //
     }
 
     /**
@@ -39,15 +38,7 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize("update", Hero::class);
-        $hero = new Hero();
-        $hero->h1 = $request->h1;
-        $hero->h2 = $request->h2;
-        $hero->img = $request->file('img')->hashName();
-        $request->file('img')->storePublicly("img/heroes","public");
-        $hero->save();
-
-        return redirect()->route("hero.index")->with("successMessage", "Votre chiffre à bien été ajouté");
+        //
     }
 
     /**
@@ -58,8 +49,7 @@ class HeroController extends Controller
      */
     public function show(Hero $hero)
     {
-        $this->authorize("view", $hero);
-        return view("backoffice.hero.show", compact("hero"));
+        
     }
 
     /**
@@ -84,11 +74,16 @@ class HeroController extends Controller
     public function update(Request $request, Hero $hero)
     {
         $this->authorize("update", $hero);
+        $request->validate([
+            'h1'=>'required',
+            'h2'=>'required',
+            'img'=>'required',
+        ]);
+
         $hero->h1 = $request->h1;
         $hero->h2 = $request->h2;
 
         if($request->file('img')!= null){
-            // $filename = $request->file('image')->getClientOriginalName();
             Storage::disk('public')->delete("img/" . $hero->image);
 
             $filename = "hero-img" . '.' . $request->file('img')->getClientOriginalExtension();
@@ -97,6 +92,12 @@ class HeroController extends Controller
             $request->file('img')->storePubliclyAs('img/', $filename , 'public');
         }
 
+        /* if ($request->file("image") !== null) {
+            $hero->image = $request->file("image")->hashName();
+            $request->file("image")->storePublicly("img", "public");
+        } */
+
+        $hero->updated_at = now();
         $hero->save();
 
         return redirect()->route("hero.index")->with("successMessage", "Votre chiffre à bien été ajouté");
@@ -110,8 +111,6 @@ class HeroController extends Controller
      */
     public function destroy(Hero $hero)
     {
-        $this->authorize("delete", $hero);
-        $hero->delete();
-        return redirect()->back()->with("successMessage", "Votre chiffre à bien été suprimmé");
+        //
     }
 }

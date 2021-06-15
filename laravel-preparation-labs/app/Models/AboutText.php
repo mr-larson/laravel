@@ -11,7 +11,7 @@ class AboutText extends Model
     protected $table = "about_texts";
 
     protected $fillable = [
-        "i",
+        "icon",
         "h4",
         "p",
     ];

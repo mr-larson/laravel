@@ -14,7 +14,9 @@ class LinkController extends Controller
      */
     public function index()
     {
-        //
+        $link = Link::all();
+        $navbar = true;
+        return view("backoffice.link.all", compact("links", "navbar"));
     }
 
     /**
@@ -57,7 +59,8 @@ class LinkController extends Controller
      */
     public function edit(Link $link)
     {
-        //
+        $this->authorize("update", $link);
+        return view("backoffice.link.edit", compact("link"));
     }
 
     /**
@@ -69,7 +72,22 @@ class LinkController extends Controller
      */
     public function update(Request $request, Link $link)
     {
-        //
+        $request->validate([
+            "h4"=>'required'
+        ]);
+
+        $this->authorize("update", $link);
+        $link->h4 = $request->h4;
+        $link->li1 = $request->li1;
+        $link->li2 = $request->li2;
+        $link->li3 = $request->li3;
+        $link->li4 = $request->li4;
+        $link->li5 = $request->li5;
+
+        $link->updated_at = now();
+        $link->save();
+
+        return redirect()->route("link.index")->with("successMessage", "Votre chiffre à bien été ajouté");
     }
 
     /**

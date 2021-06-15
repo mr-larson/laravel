@@ -14,7 +14,9 @@ class AboutTextController extends Controller
      */
     public function index()
     {
-        //
+        $aboutTexts = AboutText::paginate(5);
+        $navbar = true;
+        return view("backoffice.aboutText.all", compact("about_texts", "navbar"));
     }
 
     /**
@@ -24,7 +26,8 @@ class AboutTextController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', AboutText::class);
+        return view('backoffice.aboutText.create');
     }
 
     /**
@@ -35,7 +38,24 @@ class AboutTextController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize('create', AboutText::class);
+
+        $request->validate([
+            'icon'=>'required',
+            'h4'=>'required',
+            'p'=>'required'
+        ]);
+
+        $aboutText = new AboutText();
+
+        $aboutText->icon = $request->icon;
+        $aboutText->h4 = $request->h4;
+        $aboutText->p = $request->p;
+        $aboutText->updated_at = now();
+        
+        $aboutText->save();
+
+        return redirect()->route('aboutText.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
     }
 
     /**
@@ -46,7 +66,7 @@ class AboutTextController extends Controller
      */
     public function show(AboutText $aboutText)
     {
-        //
+        return view('backoffice.aboutText.show', compact('aboutText'));
     }
 
     /**
@@ -57,7 +77,8 @@ class AboutTextController extends Controller
      */
     public function edit(AboutText $aboutText)
     {
-        //
+        $this->authorize('update', $aboutText);
+        return view("backoffice.aboutText.edit", compact('aboutText'));
     }
 
     /**
@@ -69,7 +90,20 @@ class AboutTextController extends Controller
      */
     public function update(Request $request, AboutText $aboutText)
     {
-        //
+        $request->validate([
+            'icon'=>'required',
+            'h4'=>'required',
+            'p'=>'required'
+        ]);
+
+        $aboutText->icon = $request->icon;
+        $aboutText->h4 = $request->h4;
+        $aboutText->p = $request->p;
+        $aboutText->updated_at = now();
+        
+        $aboutText->save();
+
+        return redirect()->route('aboutText.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
     }
 
     /**
@@ -80,6 +114,9 @@ class AboutTextController extends Controller
      */
     public function destroy(AboutText $aboutText)
     {
-        //
+        $this->authorize('delete', $aboutText);
+        $aboutText->delete();
+
+        return redirect()->back();
     }
 }

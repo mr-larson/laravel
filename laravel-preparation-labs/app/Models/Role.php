@@ -13,4 +13,8 @@ class Role extends Model
     protected $fillable = [
         "poste",
     ];
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

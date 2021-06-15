@@ -14,7 +14,9 @@ class AboutTitreController extends Controller
      */
     public function index()
     {
-        //
+        $aboutTitres = AboutTitre::all();
+        $navbar = true;
+        return view("backoffice.aboutTitre.all", compact("about_titres", "navbar"));
     }
 
     /**
@@ -57,7 +59,8 @@ class AboutTitreController extends Controller
      */
     public function edit(AboutTitre $aboutTitre)
     {
-        //
+        $this->authorize("aboutTitre-edit", $aboutTitre);
+        return view("backoffice.aboutTitre.edit", compact("about_titre"));
     }
 
     /**
@@ -69,7 +72,19 @@ class AboutTitreController extends Controller
      */
     public function update(Request $request, AboutTitre $aboutTitre)
     {
-        //
+        $this->authorize("update", $aboutTitre);
+        $request->validate([
+            'h3'=>'required',
+            'p'=>'required',
+        ]);
+
+        $aboutTitre->h3 = $request->h3;
+        $aboutTitre->p = $request->p;
+
+        $aboutTitre->updated_at = now();
+        $aboutTitre->save();
+
+        return redirect()->route("aboutTitre.index")->with("successMessage", "Votre chiffre à bien été ajouté");
     }
 
     /**

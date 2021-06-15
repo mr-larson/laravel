@@ -14,7 +14,9 @@ class TitreController extends Controller
      */
     public function index()
     {
-        //
+        $titres = Titre::all();
+        $navbar = true;
+        return view("backoffice.titre.all", compact("titres", "navbar"));
     }
 
     /**
@@ -57,7 +59,8 @@ class TitreController extends Controller
      */
     public function edit(Titre $titre)
     {
-        //
+        $this->authorize("titre-service", $titre);
+        return view("backoffice.titre.edit", compact("titre"));
     }
 
     /**
@@ -69,7 +72,19 @@ class TitreController extends Controller
      */
     public function update(Request $request, Titre $titre)
     {
-        //
+        $this->authorize("update", $titre);
+        $request->validate([
+            'h2'=>'required',
+            'p'=>'required',
+        ]);
+
+        $titre->h2 = $request->h2;
+        $titre->p = $request->p;
+
+        $titre->updated_at = now();
+        $titre->save();
+
+        return redirect()->route("titre.index")->with("successMessage", "Votre chiffre à bien été ajouté");
     }
 
     /**

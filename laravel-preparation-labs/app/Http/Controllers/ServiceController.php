@@ -14,7 +14,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::paginate(5);
+        $navbar = true;
+        return view('backoffice.service.all', compact('services', 'navbar'));
     }
 
     /**
@@ -24,7 +26,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('service-create', Service::class);
+        return view('backoffice.service.create');
     }
 
     /**
@@ -35,7 +38,24 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize('create', Service::class);
+
+        $request->validate([
+            'icon' => 'required',
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $service = new Service();
+
+        $service->icon = $request->icon;
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->created_at = now();
+        
+        $service->save();
+
+        return redirect()->route('service.index', compact('service'))->with("message", "$service->title a bien été crée.");
     }
 
     /**
@@ -46,7 +66,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('backoffice.service.show', compact('service'));
     }
 
     /**
@@ -57,7 +77,8 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        $this->authorize('service-edit', $service);
+        return view('backoffice.service.edit', compact('service'));
     }
 
     /**
@@ -69,7 +90,22 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $this->authorize('update', $service);
+        $request->validate([
+            'icon' => 'required',
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+
+        $service->icon = $request->icon;
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->updated_at = now();
+        
+        $service->save();
+
+        return redirect()->route('service.index', compact('service'))->with("message", "$service->title a bien été modifié.");
     }
 
     /**
@@ -80,6 +116,9 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $this->authorize('delete', $service);
+        $service->delete();
+        
+        return redirect()->back();
     }
 }

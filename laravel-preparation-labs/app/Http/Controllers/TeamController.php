@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -14,7 +15,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::paginate(5)();
+        $navbar = true;
+        return view("backoffice.team.all", compact("teams", "navbar"));
     }
 
     /**
@@ -24,7 +27,8 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize("team-create", Team::class);
+        return view('backoffice.team.create');
     }
 
     /**
@@ -35,7 +39,28 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize("create", Team::class);
+        $request->validate([
+            'photo'=>'required'
+        ]);
+
+        $team = new Team();
+
+        $team->twitter = $request->twitter;
+        $team->facebook = $request->facebook;
+        $team->insta = $request->insta;
+        $team->link = $request->link;
+
+        if ($request->file("photo") !== null) {
+            $team->photo = $request->file("photo")->hashName();
+            $request->file("photo")->storePublicly("photo", "public");
+        }
+
+        $team->created_at = now();
+        
+        $team->save();
+
+        return redirect()->route('team.index', compact('team'))->with("message", "vos info ont bien été crée.");
     }
 
     /**
@@ -46,7 +71,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return view('backoffice.team.show', compact('team'));
     }
 
     /**
@@ -57,7 +82,8 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        $this->authorize("team-edit", $team);
+        return view('backoffice.team.show', compact('team'));
     }
 
     /**
@@ -69,7 +95,26 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $this->authorize("update", $team);
+        $request->validate([
+            'photo'=>'required'
+        ]);
+
+        $team->twitter = $request->twitter;
+        $team->facebook = $request->facebook;
+        $team->insta = $request->insta;
+        $team->link = $request->link;
+
+        if ($request->file("photo") !== null) {
+            $team->photo = $request->file("photo")->hashName();
+            $request->file("photo")->storePublicly("photo", "public");
+        }
+
+        $team->created_at = now();
+        
+        $team->save();
+
+        return redirect()->route('team.index', compact('team'))->with("message", "vos info ont bien été crée.");
     }
 
     /**
@@ -80,6 +125,10 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $this->authorize('delete', $team);
+        Storage::disk("public")->delete("img/" .$team->img);
+        $team->delete();
+
+        return redirect()->back();
     }
 }
