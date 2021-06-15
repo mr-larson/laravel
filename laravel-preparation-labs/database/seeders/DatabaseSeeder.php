@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ServiceSeeder::class);
         $this->call(PortfolioSeeder::class);
         $this->call(TestimonialSeeder::class);
+        $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(TeamSeeder::class);
-        $this->call(RoleSeeder::class);
         $this->call(AdresseSeeder::class);
         $this->call(LinkSeeder::class);
     }

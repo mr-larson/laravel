@@ -17,4 +17,7 @@ class Team extends Model
         "insta",
         "link",
     ];
+    /* public function user(){
+        return $this->belongsTo(User::class);
+    } */
 }
