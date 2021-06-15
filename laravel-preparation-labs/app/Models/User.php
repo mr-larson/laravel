@@ -21,7 +21,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    /* public function team(){
+    public function team(){
         return $this->hasOne(Team::class);
-    } */
+    }
 }

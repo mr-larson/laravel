@@ -21,7 +21,7 @@ class isAdmin
         if(Auth::user()->role_id === 1){
             return $next($request);
         } else{
-            return redirect()->back()->with("message", "T'es niqué connard…va!");
+            return redirect()->back()->with("message", "Vous n'avez pas accés");
         }
         
     }

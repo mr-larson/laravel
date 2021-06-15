@@ -20,7 +20,7 @@ class CreateTeamsTable extends Migration
             $table->string("facebook")->nullable();
             $table->string("insta")->nullable();
             $table->string("link")->nullable();
-            /* $table->foreignId('user_id')->constrained('users')->onDelete("cascade")->onUpdate("cascade"); */
+            $table->foreignId('user_id')->constrained('users')->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }

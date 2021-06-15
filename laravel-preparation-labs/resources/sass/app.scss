@@ -6,3 +6,19 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.apparition{
+    animation: apparition 1.5s 0s ease-in;
+}
+.apparition1{
+    animation: apparition 1s 0s ease-in;
+}
+@keyframes apparition {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}      

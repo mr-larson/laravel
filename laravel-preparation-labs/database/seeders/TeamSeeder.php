@@ -20,6 +20,7 @@ class TeamSeeder extends Seeder
             "facebook" => "",
             "insta" => "",
             "link" => "",
+            "user_id" =>"1"
         ]);
 
         DB::table("teams")->insert([
@@ -28,6 +29,7 @@ class TeamSeeder extends Seeder
             "facebook" => "",
             "insta" => "",
             "link" => "",
+            "user_id" =>"2"
         ]);
 
         DB::table("teams")->insert([
@@ -36,6 +38,7 @@ class TeamSeeder extends Seeder
             "facebook" => "",
             "insta" => "",
             "link" => "",
+            "user_id" =>"3"
         ]);
 
         DB::table("teams")->insert([
@@ -44,6 +47,7 @@ class TeamSeeder extends Seeder
             "facebook" => "",
             "insta" => "",
             "link" => "",
+            "user_id" =>"4"
         ]);
     }
 }

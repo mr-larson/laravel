@@ -16,7 +16,7 @@ class AboutTextController extends Controller
     {
         $aboutTexts = AboutText::paginate(5);
         $navbar = true;
-        return view("backoffice.aboutText.all", compact("about_texts", "navbar"));
+        return view("backoffice.about.all", compact("aboutTexts", "navbar"));
     }
 
     /**
@@ -27,7 +27,7 @@ class AboutTextController extends Controller
     public function create()
     {
         $this->authorize('create', AboutText::class);
-        return view('backoffice.aboutText.create');
+        return view('backoffice.about.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class AboutTextController extends Controller
         
         $aboutText->save();
 
-        return redirect()->route('aboutText.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
+        return redirect()->route('about.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
     }
 
     /**
@@ -66,7 +66,7 @@ class AboutTextController extends Controller
      */
     public function show(AboutText $aboutText)
     {
-        return view('backoffice.aboutText.show', compact('aboutText'));
+        return view('backoffice.about.show', compact('aboutText'));
     }
 
     /**
@@ -78,7 +78,7 @@ class AboutTextController extends Controller
     public function edit(AboutText $aboutText)
     {
         $this->authorize('update', $aboutText);
-        return view("backoffice.aboutText.edit", compact('aboutText'));
+        return view("backoffice.about.edit", compact('aboutText'));
     }
 
     /**
@@ -103,7 +103,7 @@ class AboutTextController extends Controller
         
         $aboutText->save();
 
-        return redirect()->route('aboutText.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
+        return redirect()->route('about.index', compact('aboutText'))->with("message", "$aboutText->h4 a bien été crée.");
     }
 
     /**
