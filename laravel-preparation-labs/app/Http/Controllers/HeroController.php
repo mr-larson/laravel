@@ -16,8 +16,7 @@ class HeroController extends Controller
     public function index()
     {
         $hero = Hero::first();
-        $navbar = true;
-        return view("backoffice.hero.all", compact("hero", "navbar"));
+        return view("backoffice.hero.all", compact("hero"));
     }
 
     /**
@@ -77,17 +76,16 @@ class HeroController extends Controller
         $request->validate([
             'h1'=>'required',
             'h2'=>'required',
-            'img'=>'required',
         ]);
 
         $hero->h1 = $request->h1;
         $hero->h2 = $request->h2;
 
         if($request->file('img')!= null){
-            Storage::disk('public')->delete("img/" . $hero->image);
+            Storage::disk('public')->delete("img/" . $hero->img);
 
-            $filename = "hero-img" . '.' . $request->file('img')->getClientOriginalExtension();
-            $hero->image = $filename;
+            $filename = $request->file('img')->getClientOriginalName();
+            $hero->img = $filename;
 
             $request->file('img')->storePubliclyAs('img/', $filename , 'public');
         }

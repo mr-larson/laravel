@@ -16,8 +16,7 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::paginate(5)();
-        $navbar = true;
-        return view("backoffice.team.all", compact("teams", "navbar"));
+        return view("backoffice.team.all", compact("teams"));
     }
 
     /**

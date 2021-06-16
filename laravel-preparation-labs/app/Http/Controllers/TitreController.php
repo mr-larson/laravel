@@ -15,8 +15,7 @@ class TitreController extends Controller
     public function index()
     {
         $titres = Titre::all();
-        $navbar = true;
-        return view("backoffice.titre.all", compact("titres", "navbar"));
+        return view("backoffice.titre.all", compact("titres"));
     }
 
     /**

@@ -16,8 +16,7 @@ class FeatureController extends Controller
     public function index()
     {
         $features = Feature::paginate(5)();
-        $navbar = true;
-        return view("backoffice.feature.all", compact("features", "navbar"));
+        return view("backoffice.feature.all", compact("features"));
     }
 
     /**

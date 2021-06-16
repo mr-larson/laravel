@@ -17,9 +17,9 @@
                                 <li><i class="bx bx-chevron-right"></i>{{ $link->li5 }}</li>
                             </ul>
                             <div class="buttons flex justify-center">
-                               {{--  @can('update', $link) --}}
+                                @can('update', $link)
                                     <a href="{{route('link.edit',$link->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                               {{--  @endcan --}}
+                                @endcan
                             </div>
                         </div>
                 @endforeach

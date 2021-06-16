@@ -8,12 +8,12 @@
             <h1 class="py-2">{{ $hero->h1 }}</h1>
             <h2 class="py-2">{{ $hero->h2 }}</h2>
             <div class="pb-4">
-                <img class="w-full" src="{{ asset('img/hero-img.png') }}" alt="img">
+                <img class="w-full" src="{{ asset("img/" . $hero->img) }}" alt="img">
             </div>
             <div class="buttons flex justify-center">
-                {{--  @can('update', $hero) --}}
+                @can('update', $hero)
                     <a href="{{route('hero.edit',$hero->id) }}" class="btn-get-started scrollto">Edit</a>
-                {{--  @endcan --}}
+                @endcan
             </div>
         </div>
     </section>

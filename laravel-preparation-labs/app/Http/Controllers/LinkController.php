@@ -15,8 +15,7 @@ class LinkController extends Controller
     public function index()
     {
         $links = Link::all();
-        $navbar = true;
-        return view("backoffice.link.all", compact("links", "navbar"));
+        return view("backoffice.link.all", compact("links"));
     }
 
     /**

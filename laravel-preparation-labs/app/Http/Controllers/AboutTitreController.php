@@ -15,8 +15,7 @@ class AboutTitreController extends Controller
     public function index()
     {
         $aboutTitre = AboutTitre::first();
-        $navbar = true;
-        return view("backoffice.aboutTitre.all", compact("aboutTitre", "navbar"));
+        return view("backoffice.aboutTitre.all", compact("aboutTitre"));
     }
 
     /**

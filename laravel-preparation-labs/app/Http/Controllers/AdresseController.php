@@ -15,8 +15,7 @@ class AdresseController extends Controller
     public function index()
     {
         $adresse = Adresse::first();
-        $navbar = true;
-        return view("backoffice.adresse.all", compact("adresse", "navbar"));
+        return view("backoffice.adresse.all", compact("adresse"));
     }
 
     /**

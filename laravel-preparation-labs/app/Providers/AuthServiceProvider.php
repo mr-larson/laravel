@@ -62,7 +62,7 @@ class AuthServiceProvider extends ServiceProvider
             return in_array(Auth::user()->role_id, [1]);
         });
 
-        //Gate portfolio
+        //Gate Portfolio
         Gate::define('portfolio-create', function () {
             return in_array(Auth::user()->role_id, [1]);
         });
@@ -99,7 +99,11 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         //Gate Adresse
-        Gate::define('adresse', function () {
+        Gate::define('adresse-create', function () {
+            return in_array(Auth::user()->role_id, [1]);
+        });
+
+        Gate::define('adresse-edit', function () {
             return in_array(Auth::user()->role_id, [1]);
         });
     }

@@ -17,8 +17,7 @@ class AboutTextController extends Controller
     {
         $aboutTitre = AboutTitre::first();
         $aboutTexts = AboutText::paginate(4);
-        $navbar = true;
-        return view("backoffice.about.all", compact("aboutTexts","aboutTitre", "navbar"));
+        return view("backoffice.about.all", compact("aboutTexts","aboutTitre"));
     }
 
     /**
