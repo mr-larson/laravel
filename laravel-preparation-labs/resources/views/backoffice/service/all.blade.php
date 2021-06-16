@@ -16,7 +16,7 @@
                             <div class="icon">
                                 <i class="{{ $service->icon }}"></i>
                             </div>
-                            <h4>{{ $service->title }}</a></h4>
+                            <h4>{{ $service->title }}</h4>
                             <p>{{ $service->description }}</p>
                             <div class="buttons flex justify-center">
                                {{--  @can('update', $service) --}}

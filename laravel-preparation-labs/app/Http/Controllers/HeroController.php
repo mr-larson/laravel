@@ -15,9 +15,9 @@ class HeroController extends Controller
      */
     public function index()
     {
-        $heros = Hero::all();
+        $hero = Hero::first();
         $navbar = true;
-        return view("backoffice.hero.all", compact("heroes", "navbar"));
+        return view("backoffice.hero.all", compact("hero", "navbar"));
     }
 
     /**

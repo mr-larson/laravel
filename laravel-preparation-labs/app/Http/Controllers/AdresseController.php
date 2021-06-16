@@ -14,9 +14,9 @@ class AdresseController extends Controller
      */
     public function index()
     {
-        $adresses = Adresse::all();
+        $adresse = Adresse::first();
         $navbar = true;
-        return view("backoffice.adresse.all", compact("adresses", "navbar"));
+        return view("backoffice.adresse.all", compact("adresse", "navbar"));
     }
 
     /**
@@ -76,7 +76,6 @@ class AdresseController extends Controller
         $request->validate([
             "rue"=>'required',
             "ville"=>'required',
-            "pays"=>'required',
             "phone"=>'required',
             "email"=>'required'
         ]);

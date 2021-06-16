@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\AboutTextController;
+use App\Http\Controllers\AdresseController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use App\Models\AboutText;
 use App\Models\AboutTitre;
 use App\Models\Adresse;
@@ -60,10 +65,23 @@ require __DIR__.'/auth.php';
 //Route pour l'email (Contact.blade.php)
 Route::post("/send-mail", [MailController::class, "sendMail"]);
 
-//Service
-// Route::resource("/service", ServiceController::class)->middleware(['auth', 'isAdmin']);
-Route::resource("/service", ServiceController::class)->middleware(['auth']);
+//Hero
+Route::resource("/hero", HeroController::class)->middleware(['auth']);
 
 //About
-// Route::resource("/about", AboutController::class)->middleware(['auth', 'isAdmin']);
 Route::resource("/about", AboutTextController::class)->middleware(['auth']);
+
+//Service
+Route::resource("/service", ServiceController::class)->middleware(['auth']);
+
+//Portfolio
+Route::resource("/portfolio", PortfolioController::class)->middleware(['auth']);
+
+//Testimonial
+Route::resource("/testimonial", TestimonialController::class)->middleware(['auth']);
+
+//Adresse
+Route::resource("/adresse", AdresseController::class)->middleware(['auth']);
+
+//Link
+Route::resource("/link", LinkController::class)->middleware(['auth']);

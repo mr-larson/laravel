@@ -7,7 +7,7 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" data-aos="fade-up">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <h2 class="text-center p-2 text-4xl font-regular">Bienvenue dans l'interface admin</h2>
-                        <p class="text-center p-2 text-lg opacity-80 font-light">Ici vous aurez accès à la gestions de vos donnés. <br> <u>Attention chaque click entraine des conséquences</u> </p>
+                        <p class="text-center p-2 text-lg opacity-80 font-light">Ici vous aurez accès à la gestions de vos donnés.</p>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="50">
-                    <a href="{{ route('service.index') }}" class="block ">
+                    <a href="{{ route('hero.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Heroes</p>
                             <p class="text-white opacity-50 font-light py-3">Gérer la section hero</p>
@@ -47,7 +47,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="250">
-                    <a href="{{ route('service.index') }}" class="block ">
+                    <a href="{{ route('portfolio.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Portfolios</p>
                             <p class="text-white opacity-50 font-light py-3">Gérer la section portfolio</p>
@@ -55,7 +55,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="300">
-                    <a href="{{ route('service.index') }}" class="block ">
+                    <a href="{{ route('testimonial.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Testimonials</p>
                             <p class="text-white opacity-50 font-light py-3">Gérer la section testimonial</p>
@@ -71,7 +71,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="400">
-                    <a href="{{ route('service.index') }}" class="block ">
+                    <a href="{{ route('adresse.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Coordonée</p>
                             <p class="text-white opacity-50 font-light py-3">Gérer l'adresse de votre société</p>
@@ -86,10 +86,15 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="450">
+                    <a href="{{ route('link.index') }}" class="block ">
+                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                            <p class="text-white text-3xl">link du footer</p>
+                            <p class="text-white opacity-50 font-light py-3">Gérer les liens de votre footer</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="p=6 text white">
-            footer
         </div>
     </x-app-layout>
 @endsection

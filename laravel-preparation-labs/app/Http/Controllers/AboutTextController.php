@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutText;
+use App\Models\AboutTitre;
 use Illuminate\Http\Request;
 
 class AboutTextController extends Controller
@@ -14,9 +15,10 @@ class AboutTextController extends Controller
      */
     public function index()
     {
-        $aboutTexts = AboutText::paginate(5);
+        $aboutTitre = AboutTitre::first();
+        $aboutTexts = AboutText::paginate(4);
         $navbar = true;
-        return view("backoffice.about.all", compact("aboutTexts", "navbar"));
+        return view("backoffice.about.all", compact("aboutTexts","aboutTitre", "navbar"));
     }
 
     /**

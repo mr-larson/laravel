@@ -15,7 +15,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::paginate(5)();
+        $testimonials = Testimonial::paginate(4);
         $navbar = true;
         return view("backoffice.testimonial.all", compact("testimonials", "navbar"));
     }

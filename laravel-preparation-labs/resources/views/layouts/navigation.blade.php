@@ -15,12 +15,27 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('hero.index')" :active="request()->routeIs('hero.index')">
+                        Hero
+                    </x-nav-link>
+                    <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
+                        About
+                    </x-nav-link>
                     <x-nav-link :href="route('service.index')" :active="request()->routeIs('service.index')">
-                        Services
-                     </x-nav-link>
-                     <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
-                        Abouts
-                     </x-nav-link>
+                        Service
+                    </x-nav-link>
+                    <x-nav-link :href="route('portfolio.index')" :active="request()->routeIs('portfolio.index')">
+                        Portfolio
+                    </x-nav-link>
+                    <x-nav-link :href="route('testimonial.index')" :active="request()->routeIs('testimonial.index')">
+                        Testimonial
+                    </x-nav-link>
+                    <x-nav-link :href="route('adresse.index')" :active="request()->routeIs('adresse.index')">
+                        Coordonée
+                    </x-nav-link>
+                    <x-nav-link :href="route('link.index')" :active="request()->routeIs('link.index')">
+                        Footer
+                    </x-nav-link>
                 </div>
             </div>
 

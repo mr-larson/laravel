@@ -17,11 +17,11 @@ class CreateAdressesTable extends Migration
             $table->id();
             $table->string("rue");
             $table->string("ville");
-            $table->string("pays");
+            $table->string("pays")->nullable();
             $table->string("phone");
             $table->string("email");
-            $table->string("phone2")->nullable();;
-            $table->string("email2")->nullable();;
+            $table->string("phone2")->nullable();
+            $table->string("email2")->nullable();
             $table->timestamps();
         });
     }
