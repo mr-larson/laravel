@@ -22,7 +22,7 @@
                 <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
                     <div class="row">
                         @foreach ($aboutTexts as $about)
-                        <div class="col-6">
+                        <div class="col-6 icon-box">
                             <div class="icon-boxes d-flex flex-column justify-content-center">
                                     <div class="icon-box {{ $about->id }}" data-aos="fade-up" data-aos-delay="100">
                                         <i class="{{ $about->icon }}"></i>

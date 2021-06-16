@@ -90,7 +90,7 @@ class AdresseController extends Controller
         $adresse->updated_at = now();
         $adresse->save();
 
-        return redirect()->route("adresse.index")->with("successMessage", "Votre chiffre à bien été ajouté");
+        return redirect()->route("adresse.index")->with("successMessage", "vos coordonées ont bien été ajouté");
     }
 
     /**

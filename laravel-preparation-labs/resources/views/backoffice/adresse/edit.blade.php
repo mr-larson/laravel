@@ -6,6 +6,15 @@
     <!--Section adresse-->
     <section class="services">
         <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg"data-aos="fade-up">Section adresse</h2>
+        @if ($errors->any())
+            <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
+
+                @foreach ($errors->all() as $message)
+                    <li class="text-white">{{ $message }}</li>
+                @endforeach
+        
+            </ul>
+        @endif
         <!--Edit Card-->
         <form method="POST" class="grid grid-cols-1 bg-indigo-600 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('adresse.update', $adresse->id) }}" enctype="multipart/form-data">
             @csrf

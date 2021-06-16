@@ -53,9 +53,13 @@ class TestimonialController extends Controller
         $testimonial->h3 = $request->h3;
         $testimonial->h4 = $request->h4;
 
-        if ($request->file("img") !== null) {
-            $testimonial->img = $request->file("img")->hashName();
-            $request->file("img")->storePublicly("img", "public");
+        if($request->file('img')!= null){
+            Storage::disk('public')->delete("img/" . $testimonial->img);
+
+            $filename = $request->file('img')->getClientOriginalName();
+            $testimonial->img = $filename;
+
+            $request->file('img')->storePubliclyAs('img/', $filename , 'public');
         }
 
         $testimonial->created_at = now();
@@ -73,7 +77,7 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
-        return view('backoffice.testimonial.show', compact('testimonial'));
+        
     }
 
     /**
@@ -85,7 +89,7 @@ class TestimonialController extends Controller
     public function edit(Testimonial $testimonial)
     {
         $this->authorize("testimonial-edit", $testimonial);
-        return view('backoffice.testimonial.show', compact('testimonial'));
+        return view('backoffice.testimonial.edit', compact('testimonial'));
     }
 
     /**
@@ -110,9 +114,13 @@ class TestimonialController extends Controller
         $testimonial->h3 = $request->h3;
         $testimonial->h4 = $request->h4;
 
-        if ($request->file("img") !== null) {
-            $testimonial->img = $request->file("img")->hashName();
-            $request->file("img")->storePublicly("img", "public");
+        if($request->file('img')!= null){
+            Storage::disk('public')->delete("img/testimonials" . $testimonial->img);
+
+            $filename = $request->file('img')->getClientOriginalName();
+            $testimonial->img = "img/testimonials/" . $filename;
+
+            $request->file('img')->storePubliclyAs('img/testimonials', $filename , 'public');
         }
 
         $testimonial->created_at = now();
@@ -131,7 +139,7 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         $this->authorize('delete', $testimonial);
-        Storage::disk("public")->delete("img/" .$testimonial->img);
+        Storage::disk("public")->delete("img/testimonials" .$testimonial->img);
         $testimonial->delete();
 
         return redirect()->back();
