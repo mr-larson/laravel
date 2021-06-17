@@ -11,7 +11,7 @@ class Team extends Model
     protected $table = "teams";
 
     protected $fillable = [
-        "photo",
+        "img",
         "twitter",
         "facebook",
         "insta",

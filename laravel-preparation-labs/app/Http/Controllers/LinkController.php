@@ -58,7 +58,7 @@ class LinkController extends Controller
      */
     public function edit(Link $link)
     {
-        $this->authorize("update", $link);
+        /* $this->authorize("link-edit", $link); */
         return view("backoffice.link.edit", compact("link"));
     }
 
@@ -86,7 +86,7 @@ class LinkController extends Controller
         $link->updated_at = now();
         $link->save();
 
-        return redirect()->route("link.index")->with("successMessage", "Votre chiffre à bien été ajouté");
+        return redirect()->route("link.index")->with("successMessage", "Votre lien à bien été ajouté");
     }
 
     /**

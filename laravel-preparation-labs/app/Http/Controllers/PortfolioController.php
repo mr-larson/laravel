@@ -82,7 +82,7 @@ class PortfolioController extends Controller
     public function edit(Portfolio $portfolio)
     {
         $this->authorize("portfolio-edit", $portfolio);
-        return view('backoffice.portfolio.show', compact('portfolio'));
+        return view('backoffice.portfolio.edit', compact('portfolio'));
     }
 
     /**

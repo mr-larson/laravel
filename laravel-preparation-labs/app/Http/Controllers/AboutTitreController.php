@@ -73,11 +73,11 @@ class AboutTitreController extends Controller
     {
         $this->authorize("update", $aboutTitre);
         $request->validate([
-            'h3'=>'required',
+            'h4'=>'required',
             'p'=>'required',
         ]);
 
-        $aboutTitre->h3 = $request->h3;
+        $aboutTitre->h4 = $request->h4;
         $aboutTitre->p = $request->p;
 
         $aboutTitre->updated_at = now();

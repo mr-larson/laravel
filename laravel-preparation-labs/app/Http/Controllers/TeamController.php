@@ -15,7 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::paginate(5)();
+        $teams = Team::all();
         return view("backoffice.team.all", compact("teams"));
     }
 
@@ -40,7 +40,7 @@ class TeamController extends Controller
     {
         $this->authorize("create", Team::class);
         $request->validate([
-            'photo'=>'required'
+            'img'=>'required'
         ]);
 
         $team = new Team();
@@ -50,9 +50,9 @@ class TeamController extends Controller
         $team->insta = $request->insta;
         $team->link = $request->link;
 
-        if ($request->file("photo") !== null) {
-            $team->photo = $request->file("photo")->hashName();
-            $request->file("photo")->storePublicly("photo", "public");
+        if ($request->file("img") !== null) {
+            $team->img = $request->file("img")->hashName();
+            $request->file("img")->storePublicly("img", "public");
         }
 
         $team->created_at = now();
@@ -96,7 +96,7 @@ class TeamController extends Controller
     {
         $this->authorize("update", $team);
         $request->validate([
-            'photo'=>'required'
+            'img'=>'required'
         ]);
 
         $team->twitter = $request->twitter;
@@ -104,9 +104,9 @@ class TeamController extends Controller
         $team->insta = $request->insta;
         $team->link = $request->link;
 
-        if ($request->file("photo") !== null) {
-            $team->photo = $request->file("photo")->hashName();
-            $request->file("photo")->storePublicly("photo", "public");
+        if ($request->file("img") !== null) {
+            $team->img = $request->file("img")->hashName();
+            $request->file("img")->storePublicly("img", "public");
         }
 
         $team->created_at = now();

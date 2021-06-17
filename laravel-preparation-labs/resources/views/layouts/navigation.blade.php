@@ -30,6 +30,9 @@
                     <x-nav-link :href="route('testimonial.index')" :active="request()->routeIs('testimonial.index')">
                         Testimonial
                     </x-nav-link>
+                    <x-nav-link :href="route('team.index')" :active="request()->routeIs('team.index')">
+                        Team
+                    </x-nav-link>
                     <x-nav-link :href="route('adresse.index')" :active="request()->routeIs('adresse.index')">
                         Coordonée
                     </x-nav-link>

@@ -1,3 +1,5 @@
+@extends('layouts.appFront')
+
 @section('content')
     @include('layouts.navigation')
     <!--Section links-->

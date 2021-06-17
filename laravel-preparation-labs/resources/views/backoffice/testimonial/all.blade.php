@@ -4,7 +4,7 @@
     @include('layouts.navigation')
     <!--Section testimonials-->
     <section id="services" class="services my-3">
-        @can('create', App\models\testimonial::class)
+        @can('create', App\models\Testimonial::class)
         <div class="max-w-6xl mx-auto  flex justify-center my-2" data-aos="fade-up">
             <a class="font-semibold py-2 px-4 rounded shadow icon-box" href="/testimonial/create">+ Create</a>
         </div>

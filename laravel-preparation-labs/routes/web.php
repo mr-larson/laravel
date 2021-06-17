@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\AboutTextController;
+use App\Http\Controllers\AboutTitreController;
 use App\Http\Controllers\AdresseController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\TitreController;
 use App\Models\AboutText;
 use App\Models\AboutTitre;
 use App\Models\Adresse;
@@ -85,3 +89,9 @@ Route::resource("/adresse", AdresseController::class)->middleware(['auth']);
 
 //Link
 Route::resource("/link", LinkController::class)->middleware(['auth']);
+
+//Team
+Route::resource("/team", TeamController::class)->middleware(['auth']);
+
+//Titre
+Route::resource("/titre", TitreController::class)->middleware(['auth']);

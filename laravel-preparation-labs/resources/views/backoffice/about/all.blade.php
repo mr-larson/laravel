@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
                     <div class="content ml-4">
-                        <h3>{{ $aboutTitre->h3 }}</h3>
+                        <h4>{{ $aboutTitre->h4 }}</h4>
                         <p>{{ $aboutTitre->p }}</p>
                         <a href="#" class="about-btn">Edit <i class="bx bx-chevron-right"></i></a>
                     </div>

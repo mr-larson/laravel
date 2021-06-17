@@ -78,7 +78,7 @@ class AboutTextController extends Controller
      */
     public function edit(AboutText $aboutText)
     {
-        $this->authorize('update', $aboutText);
+        $this->authorize('about-edit', $aboutText);
         return view("backoffice.about.edit", compact('aboutText'));
     }
 

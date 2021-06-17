@@ -10,7 +10,8 @@ use Illuminate\Queue\SerializesModels;
 class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    
+    public $contenuEmail;
     /**
      * Create a new message instance.
      *
@@ -28,6 +29,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.email');
+        return $this->view('email');
     }
 }

@@ -15,7 +15,7 @@ class TeamSeeder extends Seeder
     public function run()
     {
         DB::table("teams")->insert([
-            "photo" => "img/team/team-1.jpg",
+            "img" => "team/team-1.jpg",
             "twitter" => "",
             "facebook" => "",
             "insta" => "",
@@ -24,7 +24,7 @@ class TeamSeeder extends Seeder
         ]);
 
         DB::table("teams")->insert([
-            "photo" => "img/team/team-2.jpg",
+            "img" => "team/team-2.jpg",
             "twitter" => "",
             "facebook" => "",
             "insta" => "",
@@ -33,7 +33,7 @@ class TeamSeeder extends Seeder
         ]);
 
         DB::table("teams")->insert([
-            "photo" => "img/team/team-3.jpg",
+            "img" => "team/team-3.jpg",
             "twitter" => "",
             "facebook" => "",
             "insta" => "",
@@ -42,7 +42,7 @@ class TeamSeeder extends Seeder
         ]);
 
         DB::table("teams")->insert([
-            "photo" => "img/team/team-4.jpg",
+            "img" => "team/team-4.jpg",
             "twitter" => "",
             "facebook" => "",
             "insta" => "",

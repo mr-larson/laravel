@@ -11,7 +11,7 @@ class AboutTitre extends Model
     protected $table = "about_titres";
 
     protected $fillable = [
-        "h3",
+        "h4",
         "p",
     ];
 }
