@@ -40,7 +40,6 @@ class PortfolioController extends Controller
     {
         $this->authorize("create", Portfolio::class);
         $request->validate([
-            'img'=>'required',
             'h4'=>'required',
             'p'=>'required'
         ]);
@@ -96,7 +95,6 @@ class PortfolioController extends Controller
     {
         $this->authorize('update', $portfolio);
         $request->validate([
-            'img'=>'required',
             'h3'=>'required'
         ]);
 

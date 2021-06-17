@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
                         About
                     </x-nav-link>
+                    <x-nav-link :href="route('feature.index')" :active="request()->routeIs('feature.index')">
+                        Feature
+                    </x-nav-link>
                     <x-nav-link :href="route('service.index')" :active="request()->routeIs('service.index')">
                         Service
                     </x-nav-link>

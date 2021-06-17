@@ -33,9 +33,6 @@
                 </div>
                 <div class="my-4  col-span-2">
                     <label class="text-white text-base">Photo</label>
-                    {{-- <div class="picture_overview" >
-                        <img src="{{ asset("img/" . $testimonial->img) }}" alt="" id="preview_link">
-                    </div> --}}
                     <input name="img" class="border border-gray-300 p-3 w-full rounded-sm text-white" type="file" id="pictureSelector">
                 </div>
                 <button type="submit" class="hover:bg-indigo-800 text-white font-bold py-2 px-4  mx-auto my-8 rounded">Submit</button>

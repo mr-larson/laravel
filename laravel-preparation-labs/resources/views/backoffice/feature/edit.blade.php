@@ -3,9 +3,9 @@
 @section('content')
     @include('layouts.navigation')
 
-    <!--Section testimonial-->
+    <!--Section Feature-->
     <section class="services">
-        <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg"data-aos="fade-up">Section testimonial</h2>
+        <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg"data-aos="fade-up">Section feature</h2>
         @if ($errors->any())
             <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
 
@@ -16,25 +16,37 @@
             </ul>
         @endif
         <!--Edit Card-->
-        <form method="POST" class="grid grid-cols-1 bg-indigo-600 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('testimonial.update', $testimonial->id) }}" enctype="multipart/form-data">
+        <form method="POST" class="grid grid-cols-1 bg-indigo-600 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('feature.update', $feature->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
                 <div class="my-4 col-span-2">
                     <label class="text-white text-base">Titre</label>
-                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $testimonial->h3 }}" name="h3">
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->h3 }}" name="h3">
+                </div>
+                <div class="my-4  col-span-2">
+                    <label class="text-white text-base">Texte italic</label>
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->i }}" name="i">
+                </div>
+                <div class="my-4  col-span-2">
+                    <label class="text-white text-base">Texte</label>
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->p }}" name="p">
                 </div>
                 <div class="my-4  col-span-2">
                     <label class="text-white text-base">Texte d'accompagnement</label>
-                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $testimonial->h4 }}" name="h4">
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->li1 }}" name="li1">
                 </div>
                 <div class="my-4  col-span-2">
                     <label class="text-white text-base">Texte d'accompagnement</label>
-                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $testimonial->p }}" name="p">
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->li2 }}" name="li2">
+                </div>
+                <div class="my-4  col-span-2">
+                    <label class="text-white text-base">Texte d'accompagnement</label>
+                    <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->li3 }}" name="li3">
                 </div>
                 <div class="my-4  col-span-2">
                     <label class="text-white text-base">Photo</label>
                     <div class="picture_overview" >
-                        <img src="{{ asset("img/" . $testimonial->img) }}" alt="" id="preview_link">
+                        <img src="{{ asset("img/" . $feature->img) }}" alt="" id="preview_link">
                     </div>
                     <input name="img" class="border border-gray-300 p-3 w-full rounded-sm text-white" type="file" id="pictureSelector">
                 </div>

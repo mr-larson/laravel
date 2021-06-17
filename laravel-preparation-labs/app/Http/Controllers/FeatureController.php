@@ -15,7 +15,7 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $features = Feature::paginate(5)();
+        $features = Feature::paginate(4);
         return view("backoffice.feature.all", compact("features"));
     }
 
@@ -40,7 +40,6 @@ class FeatureController extends Controller
     {
         $this->authorize("create", Feature::class);
         $request->validate([
-            'img'=>'required',
             'h3'=>'required'
         ]);
 
@@ -85,7 +84,7 @@ class FeatureController extends Controller
     public function edit(Feature $feature)
     {
         $this->authorize("feature-edit", $feature);
-        return view('backoffice.feature.show', compact('feature'));
+        return view('backoffice.feature.edit', compact('feature'));
     }
 
     /**
@@ -99,7 +98,6 @@ class FeatureController extends Controller
     {
         $this->authorize('update', $feature);
         $request->validate([
-            'img'=>'required',
             'h3'=>'required'
         ]);
 

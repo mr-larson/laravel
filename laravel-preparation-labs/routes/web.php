@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutTextController;
 use App\Http\Controllers\AboutTitreController;
 use App\Http\Controllers\AdresseController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\MailController;
@@ -74,6 +75,9 @@ Route::resource("/hero", HeroController::class)->middleware(['auth']);
 
 //About
 Route::resource("/about", AboutTextController::class)->middleware(['auth']);
+
+//Feature
+Route::resource("/feature", FeatureController::class)->middleware(['auth']);
 
 //Service
 Route::resource("/service", ServiceController::class)->middleware(['auth']);

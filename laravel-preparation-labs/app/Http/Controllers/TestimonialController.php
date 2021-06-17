@@ -41,7 +41,6 @@ class TestimonialController extends Controller
         $this->authorize("create", Testimonial::class);
         $request->validate([
             'p'=>'required',
-            'img'=>'required',
             'h3'=>'required',
             'h4'=>'required'
         ]);
@@ -104,7 +103,6 @@ class TestimonialController extends Controller
         $this->authorize('update', $testimonial);
         $request->validate([
             'p'=>'required',
-            'img'=>'required',
             'h3'=>'required',
             'h4'=>'required'
         ]);
@@ -114,13 +112,9 @@ class TestimonialController extends Controller
         $testimonial->h3 = $request->h3;
         $testimonial->h4 = $request->h4;
 
-        if($request->file('img')!= null){
-            Storage::disk('public')->delete("img/testimonials" . $testimonial->img);
-
-            $filename = $request->file('img')->getClientOriginalName();
-            $testimonial->img = "img/testimonials/" . $filename;
-
-            $request->file('img')->storePubliclyAs('img/testimonials', $filename , 'public');
+        if ($request->file("img") !== null) {
+            $testimonial->img = $request->file("img")->hashName();
+            $request->file("img")->storePublicly("img", "public");
         }
 
         $testimonial->created_at = now();

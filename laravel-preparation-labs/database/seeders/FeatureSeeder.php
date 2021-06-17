@@ -15,7 +15,7 @@ class FeatureSeeder extends Seeder
     public function run()
     {
         DB::table("features")->insert([
-            "img" => "img/features-1.png",
+            "img" => "features-1.png",
             "h3" => "Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.",
             "i" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.",
@@ -26,7 +26,7 @@ class FeatureSeeder extends Seeder
         ]);
 
         DB::table("features")->insert([
-            "img" => "img/features-2.png",
+            "img" => "features-2.png",
             "h3" => "Corporis temporibus maiores provident",
             "i" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.",
@@ -39,7 +39,7 @@ class FeatureSeeder extends Seeder
         ]);
 
         DB::table("features")->insert([
-            "img" => "img/features-3.png",
+            "img" => "features-3.png",
             "h3" => "Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas",
             "i" => "",
             "p" => "Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.",
@@ -49,7 +49,7 @@ class FeatureSeeder extends Seeder
         ]);
 
         DB::table("features")->insert([
-            "img" => "img/features-4.png",
+            "img" => "features-4.png",
             "h3" => "Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in",
             "i" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.",

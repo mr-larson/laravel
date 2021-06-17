@@ -39,9 +39,6 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $this->authorize("create", Team::class);
-        $request->validate([
-            'img'=>'required'
-        ]);
 
         $team = new Team();
 
@@ -95,9 +92,6 @@ class TeamController extends Controller
     public function update(Request $request, Team $team)
     {
         $this->authorize("update", $team);
-        $request->validate([
-            'img'=>'required'
-        ]);
 
         $team->twitter = $request->twitter;
         $team->facebook = $request->facebook;

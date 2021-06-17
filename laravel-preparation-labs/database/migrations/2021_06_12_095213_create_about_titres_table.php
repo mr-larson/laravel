@@ -15,7 +15,7 @@ class CreateAboutTitresTable extends Migration
     {
         Schema::create('about_titres', function (Blueprint $table) {
             $table->id();
-            $table->string("h4");
+            $table->string("h3");
             $table->string("p");
             $table->timestamps();
         });

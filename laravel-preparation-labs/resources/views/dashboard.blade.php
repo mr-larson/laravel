@@ -14,7 +14,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="50">
                     <a href="{{ route('hero.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Heroes</p>
@@ -22,7 +22,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ route('about.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Abouts</p>
@@ -30,7 +30,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-sm-4" data-aos="fade-up" data-aos-delay="150">
                     <a href="{{ route('service.index') }}" class="block ">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Features</p>
@@ -75,14 +75,6 @@
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Coordonée</p>
                             <p class="text-white opacity-50 font-light py-3">Gérer l'adresse de votre société</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 my-3" data-aos="fade-up" data-aos-delay="450">
-                    <a href="{{ route('service.index') }}" class="block ">
-                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
-                            <p class="text-white text-3xl">Titres</p>
-                            <p class="text-white opacity-50 font-light py-3">Gérer les titres et description de vos sections</p>
                         </div>
                     </a>
                 </div>

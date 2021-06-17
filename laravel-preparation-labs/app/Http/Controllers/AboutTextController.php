@@ -27,7 +27,7 @@ class AboutTextController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', AboutText::class);
+        $this->authorize('about-create', AboutText::class);
         return view('backoffice.about.create');
     }
 
