@@ -12,9 +12,12 @@
              @endcan
             <div class="row">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
-                    <div class="content ml-4">
-                        <h3>{{ $aboutTitre->h3 }}</h3>
-                        <p>{{ $aboutTitre->p }}</p>
+                    <div class="content">
+                        <h3>{{ $titres[0]->h2 }}</h3>
+                        <p>
+                          {{ $titres[0]->p }}
+                        </p>
+                        <br>
                         <a href="#" class="about-btn">Edit <i class="bx bx-chevron-right"></i></a>
                     </div>
                 </div>

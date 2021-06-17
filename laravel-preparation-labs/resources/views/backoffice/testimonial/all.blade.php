@@ -4,6 +4,12 @@
     @include('layouts.navigation')
     <!--Section testimonials-->
     <section id="services" class="services my-3">
+        <div class="section-title container" data-aos="fade-up">
+            <h2>{{ $titres[4]->h2 }}</h2>
+            <p>{{ $titres[4]->p }}</p>
+            <br>
+            <a href="#" class="bg-white rounded p-1">Edit <i class="bx bx-chevron-right"></i></a>
+        </div>
         @can('create', App\models\Testimonial::class)
         <div class="max-w-6xl mx-auto  flex justify-center my-2" data-aos="fade-up">
             <a class="font-semibold py-2 px-4 rounded shadow icon-box" href="/testimonial/create">+ Create</a>
@@ -14,7 +20,7 @@
                 @foreach ($testimonials as $testimonial)
                         <div class="icon-box {{ $testimonial->id }} shadow-lg">
                             <div class="pb-4">
-                                <img class="w-full" src="{{asset($testimonial->img) }}" alt="img">
+                                <img class="w-full" src="{{asset("img/testimonials/" . $testimonial->img) }}" alt="img">
                             </div>
                             <h3 class="py-2">{{ $testimonial->h3 }}</h3>
                             <h4 class="py-2">{{ $testimonial->h4 }}</h4>

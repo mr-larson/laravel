@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use App\Models\Titre;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,9 +17,10 @@ class TeamController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         $titres = Titre::all();
         $teams = Team::all();
-        return view("backoffice.team.all", compact("teams", "titres"));
+        return view("backoffice.team.all", compact("teams", "titres", "users"));
     }
 
     /**

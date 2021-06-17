@@ -17,7 +17,7 @@ class ServiceController extends Controller
     {
         $titres = Titre::all();
         $services = Service::paginate(4);
-        return view('backoffice.service.all', compact('services'));
+        return view('backoffice.service.all', compact('services', "titres"));
     }
 
     /**

@@ -4,6 +4,12 @@
     @include('layouts.navigation')
     <!--Section teams-->
     <section id="" class="services my-3">
+        <div class="section-title container"data-aos="fade-up">
+            <h2>{{ $titres[5]->h2 }}</h2>
+            <p>{{ $titres[5]->p }}</p>
+            <br>
+            <a href="#" class="bg-white rounded p-1">Edit <i class="bx bx-chevron-right"></i></a>
+        </div>
         @can('create', App\models\Team::class)
         <div class="max-w-6xl mx-auto  flex justify-center my-2" data-aos="fade-up">
             <a class="font-semibold py-2 px-4 rounded shadow icon-box" href="/team/create">+ Create</a>
@@ -16,10 +22,16 @@
                             <div class="">
                                 <img class="w-full" src="{{asset("img/". $team->img) }}" alt="img">
                             </div>
-                            <p>{{ $team->twitter }}</p>
-                            <p>{{ $team->facebook }}</p>
-                            <p>{{ $team->insta }}</p>
-                            <p>{{ $team->link }}</p>
+                            <div class="member-info-content pt-2">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+                            </div>
+                            <div class="pt-2">
+                                <span><i class="bi bi-twitter"></i>{{ $team->twitter }}</span>
+                                <span><i class="bi bi-facebook"></i>{{ $team->facebook }}</span>
+                                <span><i class="bbi bi-instagram"></i>{{ $team->insta }}</span>
+                                <span><i class="bi bi-linkedin"></i>{{ $team->link }}</span>
+                            </div>  
                             <div class="buttons flex justify-center">
                                 @can('update', $team)
                                     <a href="{{route('team.edit',$team->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>

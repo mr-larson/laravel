@@ -4,7 +4,14 @@
     @include('layouts.navigation')
     <!--Section adresses-->
     <section id="adresses" class="services my-3">
+        <div class="section-title container" data-aos="fade-up">
+            <h2>{{ $titres[5]->h2 }}</h2>
+            <p>{{ $titres[5]->p }}</p>
+            <br>
+            <a href="#" class="bg-white rounded p-1">Edit <i class="bx bx-chevron-right"></i></a>
+        </div>
         <div class="container" data-aos="fade-up">
+
             <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5">
                 <div class="icon-box  shadow-lg">
                     <h3>Our street</h3>

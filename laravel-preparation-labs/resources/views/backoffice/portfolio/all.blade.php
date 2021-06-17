@@ -4,6 +4,12 @@
     @include('layouts.navigation')
     <!--Section portfolios-->
     <section id="" class="services my-3">
+        <div class="section-title container" data-aos="fade-up">
+            <h2>{{ $titres[3]->h2 }}</h2>
+            <p>{{ $titres[3]->p }}</p>
+            <br>
+            <a href="#" class="bg-white rounded p-1">Edit <i class="bx bx-chevron-right"></i></a>
+        </div>
         @can('create', App\models\portfolio::class)
         <div class="max-w-6xl mx-auto  flex justify-center my-2" data-aos="fade-up">
             <a class="font-semibold py-2 px-4 rounded shadow icon-box" href="/portfolio/create">+ Create</a>

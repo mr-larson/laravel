@@ -4,6 +4,10 @@
     @include('layouts.navigation')
     <!--Section links-->
     <section id="links" class="services my-3">
+        <div class="section-title container" data-aos="fade-up">
+            <h2>Footer</h2>
+            <p>Section vous permettant de customizer vos liens du footer</p>
+        </div>
         <div class="container" data-aos="fade-up">
             <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
                 @foreach ($links as $link)
