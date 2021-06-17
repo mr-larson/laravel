@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -14,6 +15,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $services = Service::paginate(4);
         return view('backoffice.service.all', compact('services'));
     }

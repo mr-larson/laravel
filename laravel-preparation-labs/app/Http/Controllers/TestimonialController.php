@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +16,9 @@ class TestimonialController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $testimonials = Testimonial::paginate(4);
-        return view("backoffice.testimonial.all", compact("testimonials"));
+        return view("backoffice.testimonial.all", compact("testimonials", "titres"));
     }
 
     /**

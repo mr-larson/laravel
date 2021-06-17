@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +16,9 @@ class TeamController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $teams = Team::all();
-        return view("backoffice.team.all", compact("teams"));
+        return view("backoffice.team.all", compact("teams", "titres"));
     }
 
     /**

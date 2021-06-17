@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +16,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $portfolios = Portfolio::paginate(4);
-        return view("backoffice.portfolio.all", compact("portfolios"));
+        return view("backoffice.portfolio.all", compact("portfolios", "titres"));
     }
 
     /**

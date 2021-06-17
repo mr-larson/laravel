@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutTitre;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class AboutTitreController extends Controller
@@ -14,8 +15,8 @@ class AboutTitreController extends Controller
      */
     public function index()
     {
-        $aboutTitre = AboutTitre::first();
-        return view("backoffice.aboutTitre.all", compact("aboutTitre"));
+        $titres = Titre::all();
+        return view("backoffice.aboutTitre.all", compact(""));
     }
 
     /**

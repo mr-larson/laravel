@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adresse;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class AdresseController extends Controller
@@ -14,8 +15,9 @@ class AdresseController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $adresse = Adresse::first();
-        return view("backoffice.adresse.all", compact("adresse"));
+        return view("backoffice.adresse.all", compact("adresse", "titres"));
     }
 
     /**

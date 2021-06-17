@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutText;
 use App\Models\AboutTitre;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class AboutTextController extends Controller
@@ -15,9 +16,9 @@ class AboutTextController extends Controller
      */
     public function index()
     {
-        $aboutTitre = AboutTitre::first();
+        $titres = Titre::all();
         $aboutTexts = AboutText::paginate(4);
-        return view("backoffice.about.all", compact("aboutTexts","aboutTitre"));
+        return view("backoffice.about.all", compact("aboutTexts","titres"));
     }
 
     /**

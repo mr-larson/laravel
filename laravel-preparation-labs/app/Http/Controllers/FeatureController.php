@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feature;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +16,9 @@ class FeatureController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $features = Feature::paginate(4);
-        return view("backoffice.feature.all", compact("features"));
+        return view("backoffice.feature.all", compact("features", "titres"));
     }
 
     /**
